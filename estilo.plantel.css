@@ -1,0 +1,945 @@
+:root {
+    /* Tema Claro (Padrão) */
+    --cor-fundo: #F0F2F5;
+    --cor-fundo-card: #FFFFFF;
+    --cor-texto: #333333;
+    --cor-titulo-principal: #DF1C3F; /* Vermelho Bayern */
+    --cor-titulo-secundario: #0066B2; /* Azul Bayern */
+    --cor-borda: #E0E0E0;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    /* Cores de apoio (gerais) */
+    --cor-principal: #DC052D;
+    --cor-secundaria: #0066B2;
+    --cor-cinza-claro: #E0E0E0;
+    --cor-cinza-medio: #666666;
+    --cor-cinza-escuro: #333333;
+
+    /* Fontes */
+    --fonte-titulos: 'Bebas Neue', sans-serif;
+    --fonte-texto: 'Inter', sans-serif;
+
+    /* Variáveis do Tema Escuro */
+    --cor-fundo-escuro: #1a1a1a;
+    --cor-fundo-card-escuro: #2a2a2a;
+    --cor-texto-claro: #e0e0e0;
+    --cor-titulo-principal-escuro: #FF4500;
+    --cor-titulo-secundario-escuro: #6495ED;
+    --cor-borda-escuro: #444444;
+    --sombra-card-escuro: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para o tema escuro quando o checkbox está marcado */
+.checkbox-tema:checked ~ body {
+    --cor-fundo: #1a1a1a;
+    --cor-fundo-card: var(--cor-fundo-card-escuro);
+    --cor-texto: #e0e0e0;
+    --cor-titulo-principal: #FF4500;
+    --cor-titulo-secundario: #6495ED;
+    --cor-borda: var(--cor-borda-escuro);
+    --sombra-card: var(--sombra-card-escuro);
+}
+
+/* ESTILOS GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0066B2;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #DC052D;
+}
+
+h3, h4, h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #0066B2;
+}
+
+section {
+    padding: 60px 40px;
+    margin-bottom: 20px;
+    background-color: var(--cor-fundo-card);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    transition: background-color 0.3s ease;
+}
+
+/* LAYOUT PRINCIPAL E MENU LATERAL */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(170deg, #DF1C3F 0%, #a4182f 100%);
+    z-index: 1001;
+    border-right: 3px solid #6495ED;
+    transition: width 0.4s ease, background-color 0.3s ease;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.menu-lateral:hover {
+    width: 220px;
+}
+
+.conteudo-principal, .rodape-principal {
+    margin-left: 80px;
+    transition: margin-left 0.4s ease;
+}
+
+.menu-lateral:hover ~ .conteudo-principal,
+.menu-lateral:hover ~ .rodape-principal {
+    margin-left: 220px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.menu-lateral ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fa-lg {
+    min-width: 50px;
+    text-align: center;
+}
+
+.texto-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+.menu-lateral:hover .texto-menu {
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+/* LOGO INTERATIVO (FLIP) */
+.container-logo {
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    margin: 0 auto 40px auto;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.logo-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.container-logo:hover .logo-flipper {
+    transform: rotateY(180deg);
+}
+.logo-frente, .logo-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.emblema-menu-recolhido {
+    max-width: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.menu-lateral:hover .emblema-menu-recolhido {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+.logo-verso {
+    background-color: #FFFFFF;
+    color: #FF4500;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+    transform: rotateY(180deg);
+    border: 4px solid var(--cor-titulo-secundaria);
+}
+
+/* CONTEÚDO PRINCIPAL - PLANTEL */
+.secao-plantel {
+    padding: 40px 20px;
+    position: relative;
+    background-color: #fffffff2;
+    border-radius: 3px;
+    box-shadow: 1px 1px 9px rgba(196, 196, 196, 0.05);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secao-plantel h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.secao-plantel h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-informacoes-gerais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.coluna-info {
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--cor-sombra);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coluna-info h3 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #DF1C3F;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+}
+
+.lista-jogadores {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#tecnico .lista-jogadores {
+    padding-top: 100px; 
+}
+
+.jogador-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    background-color: var(--cor-fundo);
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.jogador-item:hover {
+    background-color: #E0E0E0;
+    transform: translateY(-3px);
+}
+
+.jogador-item .numero-jogador {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: #DF1C3F;
+    min-width: 40px;
+    text-align: center;
+}
+
+.jogador-item .foto-jogador {
+    width: 120px;
+    height: 120px;
+    border-radius: 15%;
+    object-fit: contain;
+    border: 2px solid #0066B2;
+}
+
+.jogador-item .info-detalhe {
+    display: flex;
+    flex-direction: column;
+}
+
+.jogador-item .nome-jogador {
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.jogador-item .idade-jogador {
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+/* CONTEÚDO PRINCIPAL - CAMPO E FORMAÇÃO TÁTICA */
+.campo-futebol {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 550px;
+    background-image: url('/Imagens/Campo-Fundo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto 50px auto;
+}
+
+.posicao {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #a4182fc7;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border: 2px solid #1e1e1e;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.posicao:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+    z-index: 10;
+}
+
+.posicao .foto-jogador-campo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #1e1e1e80;
+    margin-bottom: 5px;
+}
+
+.posicao .numero-jogador-campo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.posicao .nome-jogador-campo {
+    font-size: 0.9rem;
+    color: #fdfeff;
+    line-height: 1;
+    margin-top: 1px;
+    text-shadow: 25px 25px 85px #000000 ;
+    font-weight: bolder;
+}
+
+/* Posicionamento de cada jogadora */
+.goleira {
+    top: 50%;
+    left: 13.5%;
+    transform: translate(-50%, -50%);
+}
+
+.defesa-1 {
+    top: 15%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.defesa-2 {
+    top: 38%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.defesa-3 {
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.defesa-4 {
+    top: 83%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.meio-campo-1 {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meio-campo-2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meio-campo-3 {
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ataque-1 {
+    top: 25%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.ataque-2 {
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.ataque-3 {
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* RODAPÉ  */
+.rodape-principal {
+    padding: 40px 20px;
+    background-color: #222;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 80px; /* Adicionado para alinhar com o menu */
+    transition: margin-left 0.4s ease, background-color 0.3s ease;
+}
+
+.rodape-principal .logo-rodape img {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.links-rodape {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links-rodape a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.links-rodape a:hover {
+    color: #DF1C3F; /* Vermelho Bayern */
+}
+
+.redes-sociais-rodape {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais-rodape a {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais-rodape a:hover {
+    color: #DF1C3F; /* Vermelho Bayern */
+}
+
+.mascote-easter-egg {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 120px;
+    transition: transform 0.4s ease;
+}
+
+.rodape-principal:hover .mascote-easter-egg {
+    transform: translateY(-20px);
+}
+
+/* ESTILOS DE INFORMAÇÕES ADICIONAIS - lista de reservas */
+.lista-reservas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-reservas li {
+    padding: 10px;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
+}
+
+.lista-reservas li:hover {
+    background-color: var(--cor-fundo);
+}
+
+.numero-reserva {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #DF1C3F;
+    margin-right: 10px;
+}
+
+/* Estilos para a seção do técnico */
+.info-tecnico {
+    position: absolute;
+    bottom: 0;
+    left: 3rem;
+    transform: translateY(-635%); /* Truque para centralizar verticalmente com perfeição */
+    z-index: 2;
+
+    /* Estilos de aparência */
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px ;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a foto e o texto */
+}
+
+.foto-tecnico {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6495ED ;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.detalhes-tecnico {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nome-tecnico {
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--cor-texto);
+}
+
+.cargo-tecnico {
+    font-size: 1.2rem;
+    color: #666666;
+}
+
+.idade-tecnico {
+    font-size: 1.1rem;
+    color: #666666;
+}
+
+/* CONTEÚDO PRINCIPAL - DADOS DO TÉCNICO */
+#tecnico {
+    position: relative; /* Ponto de referência para os elementos internos */
+    padding: 0; /* Remove o padding padrão da seção para que o banner ocupe todo o espaço */
+    background-color: transparent; /* Remove o fundo do card para que apenas o banner apareça */
+    box-shadow: none; /* Remove a sombra padrão do card */
+}
+
+.banner-tecnico {
+    width: 100%;
+    height: 300px; /* altura do banner */
+    overflow: hidden;
+    margin-bottom: 80px
+}
+
+.imagem-banner-tecnico {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A imagem preenche todo o espaço do banner */
+    display: block;
+}
+
+/* Container Flexbox para as colunas de reservas */
+.container-reservas-flex {
+    display: flex;
+    flex-wrap: wrap; /* Quebra para a linha de baixo em telas menores */
+    gap: 20px;
+    justify-content: center; /* Centraliza as colunas */
+}
+
+/* Estilos para cada coluna de reservas */
+.coluna-reservas {
+    flex: 1 1 280px; /* Cresce, encolhe e tem uma base de 280px de largura */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--cor-fundo);
+    box-shadow: var(--sombra-card);
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para o título de cada coluna */
+.titulo-posicao {
+    font-size: 1.5rem;
+    color: #DF1C3F;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a lista dentro de cada coluna */
+.lista-reservas {
+    list-style: none;
+    padding: 0;
+}
+
+.jogador-reserva {
+    display: flex; /* Alinha o número e o nome lado a lado */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
+}
+
+.jogador-reserva:hover {
+    background-color: var(--cor-fundo-card);
+}
+
+.numero-reserva {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #DF1C3F;
+    min-width: 30px; /* Garante que o número não "encolha" */
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+/* Tema Claro/Escuro */
+.checkbox-tema {
+    display: none;
+}
+
+.label-tema {
+    width: 60px;
+    height: 30px;
+    background-color: #111;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-tema .fas {
+    color: #f1c40f;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.label-tema .fa-moon {
+    color: #f39c12;
+}
+
+.bola {
+    width: 24px;
+    height: 24px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#alternar-tema:checked + nav + main .label-tema .bola {
+    transform: translateX(30px);
+}
+
+/* Seletor */
+#alternar-tema:checked ~ body {
+    --cor-fundo: #1a1a1a;
+    --cor-fundo-card: #2a2a2a;
+    --cor-texto: #e0e0e0;
+    --cor-titulo-principal: #FF4500;
+    --cor-titulo-secundario: #6495ED;
+    --cor-borda: #444444;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#alternar-tema:checked ~ .menu-lateral {
+    background: linear-gradient(170deg, #333 0%, #1a1a1a 100%);
+}
+
+#alternar-tema:checked ~ body h1,
+#alternar-tema:checked ~ body h2 {
+    color: #FF4500;
+}
+
+#alternar-tema:checked ~ body h3,
+#alternar-tema:checked ~ body h4,
+#alternar-tema:checked ~ body h5 {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .cartao-proximo-jogo {
+    background-color: #2a2a2a;
+    color:#e0e0e0;
+}
+
+#alternar-tema:checked ~ body .data-proximo-jogo {
+    color: #FF4500;
+}
+
+#alternar-tema:checked ~ body .hora-proximo-jogo {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .coluna-tabela {
+    background-color: var(--cor-fundo-card-escuro);
+    color:#e0e0e0;
+}
+
+#alternar-tema:checked ~ body table th {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .linha-destaque-time {
+    background-color: #3a3a3a;
+}
+
+#alternar-tema:checked ~ body .linha-destaque-time td {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .legenda-tabela span {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica {
+    background-color: var(--cor-fundo-card-escuro);
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica h4 {
+    color: #AAAAAA;
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica p {
+    color: #AAAAAA;
+}
+
+#alternar-tema:checked ~ body .cartao-produto {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .cartao-produto h3 {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .cartao-torcida {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .cartao-torcida h3 {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .modal-content-css {
+    background-color: #1e1e1e;
+}
+
+#alternar-tema:checked ~ body .modal-content-css p {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .secao-familia-bayern {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .rodape-principal {
+    background-color: #333;
+}
+
+.sobreposicao-topo .links-sociais a {
+    color: #DF1C3F;;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    transition: color 0.3s;
+}
+.sobreposicao-topo .links-sociais a:hover { 
+    color: #DF1C3F; /* Vermelho Bayern */ 
+}
+
+/* RESPONSIVIDADE */
+/* AJUSTES PARA TABLETS E TELAS MÉDIAS */
+@media (max-width: 1080px) {
+    .container-informacoes-gerais {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grade-noticias {
+        grid-template-columns: 1fr;
+    }
+
+    .sobreposicao-topo {
+        position: fixed; /* Fixa os ícones na tela */
+        top: 20px;       /* Distância do topo */
+        right: 40px;     /* Distância da direita */
+        z-index: 1002;   /* Garante que fiquem acima de tudo */
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sobreposicao-topo .links-sociais { 
+        display: flex; 
+        gap: 15px; 
+    }
+    
+    /* ícones dentro do menu lateral fiquem escondidos no desktop */
+    .menu-lateral .sobreposicao-topo {
+        display: none;
+    }
+}
+
+/* AJUSTES PARA CELULARES E TELAS PEQUENAS */
+@media (max-width: 768px) {
+    /* AJUSTES GERAIS */
+    body {
+        font-size: 14px;
+    }
+
+    /* MENU E CONTEÚDO PRINCIPAL */
+    .conteudo-principal,
+    .rodape-principal {
+        margin-left: 0 !important; 
+    }
+    
+    .menu-lateral {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border-right: none;
+        border-bottom: 3px solid #6495ED;
+        padding: 0; 
+    }
+
+    .menu-lateral:hover {
+        width: 100%;
+    }
+
+    .menu-lateral .container-logo {
+        display: none;
+    }
+    
+    /* Ícones e links na mesma linha */
+    .sobreposicao-topo {
+        /*position: static;
+        width: 100%;*/
+        display: flex;
+        order: 1;
+        justify-content: space-between; /* Ícones sociais de um lado, tema do outro */
+        align-items: center;
+        background-color: #0066B2; 
+        padding: 8px 15px; /* Padding vertical e horizontal */
+        order: 1; 
+    }
+    .links-sociais img { width: 22px; } /* Ícones sociais um pouco menores */
+
+    .menu-lateral ul {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 15px;
+        order: 2; 
+        background-color: #DF1C3F; /* Fundo vermelho do menu */
+    }
+    .menu-lateral ul::-webkit-scrollbar { display: none; }
+    .menu-lateral ul li a { padding: 8px 12px; background-color: rgba(0,0,0,0.2); border-radius: 5px; }
+    .menu-lateral .texto-menu { opacity: 1; margin-left: 0; }
+    .menu-lateral .fa-lg { display: none; }
+    
+    /* Esconde a duplicata dos ícones que está no <main> */
+    main > .sobreposicao-topo {
+        display: none;
+    }
+    
+    .container-informacoes-gerais {
+        grid-template-columns: 1fr; 
+    }
+    .secao-plantel {
+        padding: 40px 15px; /* Diminui o padding lateral da seção */
+    }
+    .secao-plantel h2 { font-size: 1.8rem; }
+    
+    #tecnico .info-tecnico {
+        position: static; 
+        transform: none; 
+        width: 100%;
+        max-width: 100%; /* Card ocupa largura total */
+        margin: -60px auto 20px auto;
+    }
+    #tecnico .lista-jogadores { padding-top: 0; }
+    .banner-tecnico { height: 150px; }
+
+    /* FORMAÇÃO TÁTICA */
+    .campo-futebol {
+        height: auto; /* altura automática */
+        aspect-ratio: 1 / 1.5; /* Força uma proporção mais vertical */
+        max-width: 100%;
+        background-size: 100% 100%; /* Garante que o campo preencha o espaço */
+    }
+    .posicao {
+        width: 55px;
+        height: 55px;
+    }
+    .posicao .foto-jogador-campo {
+        width: 45px;
+        height: 45px;
+    }
+    .posicao .nome-jogador-campo,
+    .posicao .numero-jogador-campo {
+        font-size: 0.7rem; /* Diminui a fonte para caber */
+    }
+}

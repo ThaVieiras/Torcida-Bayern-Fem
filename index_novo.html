@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Bayern Frauen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="estilo.novo.css">
+    <link rel="stylesheet" href="estilo.plantel.css">
+    <link rel="shortcut icon" href="/Imagens/favicon-96x96.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Tema escuro (início do body) -->
+    <input type="checkbox" id="alternar-tema" class="checkbox-tema">
+    <div class="sobreposicao-topo">
+        <div class="links-sociais">
+            <a href="https://www.instagram.com/fcbfrauen/?hl=de" target="_blank"><img src="/Imagens/Rede Sociais/instagram.png" alt="Instagram"/></a>
+            <a href="https://www.facebook.com/fcbfrauen/" target="_blank"><img src="/Imagens/Rede Sociais/face.png" alt="Facebook"/></a>
+            <a href="https://x.com/FCBfrauen" target="_blank"><img src="/Imagens/Rede Sociais/twitter.png" alt="Twitter"/></a>
+        </div>
+        <div class="seletor-tema">
+            <label for="alternar-tema" class="label-tema">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="bola"></div>
+            </label>
+        </div>
+    </div>
+
+    <nav class="menu-lateral">
+        <div class="container-logo">
+            <div class="logo-flipper">
+                <div class="logo-frente">
+                    <img src="/Imagens/Brasão Bayer.png" alt="Logo FC Bayern" class="emblema-menu-recolhido">
+                </div>
+                <div class="logo-verso">
+                    <span>Mia San Mia</span>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="index_novo.html"><i class="fa-solid fa-house fa-lg"></i><span class="texto-menu">Início</span></a></li>
+            <li><a href="#jogos"><i class="fa-solid fa-calendar-days fa-lg"></i><span class="texto-menu">Jogos</span></a></li>
+            <li><a href="index.plantel.html"><i class="fa-solid fa-futbol fa-lg"></i><span class="texto-menu">Escalação</span></a></li>
+            <li><a href="#elenco"><i class="fa-solid fa-users fa-lg"></i><span class="texto-menu">Elenco</span></a></li>
+            <li><a href="#destaques"><i class="fa-solid fa-bullhorn fa-lg"></i><span class="texto-menu">Destaques</span></a></li>
+            <li><a href="#loja"><i class="fa-solid fa-cart-shopping fa-lg"></i><span class="texto-menu">Loja</span></a></li>
+            <li><a href="#torcida"><i class="fa-solid fa-heart fa-lg"></i><span class="texto-menu">Torcedores</span></a></li>
+            <li><a href="#historia"><i class="fa-solid fa-trophy fa-lg"></i><span class="texto-menu">História</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="conteudo-principal">
+        <section id="destaque" class="secao-destaque">
+            <div class="container-slideshow">
+                <div class="slide" style="background-image: url('https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_16:9,c_fill,g_custom,w_1536,dpr_2/v1751290637/cms/public/images/fcbayern-com/homepage/Saison-23-24/FCB%20Frauen/Sonstiges/250905-mannschaftsfoto-fcb-169.jpg');"></div>
+                <div class="slide" style="background-image: url('https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_16:9,c_fill,g_custom,w_1536,dpr_2/v1734692789/cms/public/images/fcbayern-com/homepage/Saison-23-24/FCB%20Frauen/Bildergalerie/Highlights%202024/06-highlights-meisterinnen-fcb.jpg');"></div>
+                <div class="slide" style="background-image: url('https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_16:9,c_fill,g_custom,w_1536,dpr_2/v1734692789/cms/public/images/fcbayern-com/homepage/Saison-23-24/FCB%20Frauen/Bildergalerie/Highlights%202024/03-highlights-team-fcb.jpg');"></div>
+                <div class="slide" style="background-image: url('/Imagens/Foto\ Time\ Oficial\ 4.png');"></div>
+                <div class="slide" style="background-image: url('https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_16:9,c_fill,g_custom,w_1536,dpr_2/v1757179953/cms/public/images/fcbayern-com/homepage/Saison-25-26/FCB-Frauen/Galerien/FCB-Frauen%20vs.%20Leverkusen/02-frauen-leverkusen-060925-beier.jpg');"></div>
+                <div class="slide" style="background-image: url('/Imagens/Berni\ Acenando\ \(Fundo\ Estadio\).png');"></div>               
+            </div>
+            <div class="texto-destaque">
+                <h2>Bem Vindo</h2>
+                <h1>A REVOLUÇÃO VERMELHA<br>E BRANCA</h1>
+                <p>Onde a paixão encontra a perfeição. Explore a jornada do time feminino do FC Bayern.</p>
+                <a href="#historia" class="botao">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section id="jogos" class="secao-jogos animar-ao-rolar">
+            <div class="cabecalho-secao-jogos">
+                <h2>Próximos Jogos</h2>
+                <div class="competicoes">
+                    <h3>COMPETIÇÕES</h3>
+                    <ul>
+                        <li><img src="/Imagens/bundesliga-logo-png.png" alt="Bundesliga" class="icone-competicao"> Frauen Bundesliga</li>
+                        <li><img src="/Imagens/Silhueta Colorida.png" alt="Friendly" class="icone-competicao"> Club Friendly Games, Women</li>
+                        <li><img src="/Imagens/Copa da Alemanha-logo.png" alt="Supercopa" class="icone-competicao"> Supertaça da Alemanha</li>
+                    </ul>
+                    <img src="/Imagens/berni3-semfundo.png" alt="mascote berni" class="mascote-easter-egg">
+                </div>
+            </div>
+            <div class="container-jogos-e-tabela">
+                <div class="coluna-jogos">
+                    <div class="lista-proximos-jogos">
+                        <div class="cartao-proximo-jogo">
+                            <span class="data-proximo-jogo">Qui 21/08</span>
+                            <div class="times-proximo-jogo">
+                                <img src="/Imagens/Brasão Bayer.png" alt="Bayern" loading="lazy">
+                                <img src="/Imagens/Newcastle-logo.png" alt="Newcastle" loading="lazy">
+                            </div>
+                            <span class="hora-proximo-jogo">21:00 CET</span>
+                        </div>
+                        <div class="cartao-proximo-jogo">
+                            <span class="data-proximo-jogo">Sáb 30/08</span>
+                            <div class="times-proximo-jogo">
+                                <img src="/Imagens/Brasão Bayer.png" alt="Bayern" loading="lazy">
+                                <img src="/Imagens/young-boys-logo.png" alt="Young Boys" loading="lazy">
+                            </div>
+                            <span class="hora-proximo-jogo">08:00 CET</span>
+                        </div>
+                        <div class="cartao-proximo-jogo">
+                            <span class="data-proximo-jogo">Sáb 06/09</span>
+                            <div class="times-proximo-jogo">
+                                <img src="/Imagens/Brasão Bayer.png" alt="Bayern" loading="lazy">
+                                <img src="/Imagens/zeiss-jena-vector-logo.png" alt="Jena" loading="lazy">
+                            </div>
+                            <span class="hora-proximo-jogo">10:00 CET</span>
+                        </div>
+                        <div class="cartao-proximo-jogo">
+                            <span class="data-proximo-jogo">Dom 14/09</span>
+                            <div class="times-proximo-jogo">
+                                <img src="/Imagens/Brasão Bayer.png" alt="Bayern" loading="lazy">
+                                <img src="/Imagens/Bayer-Leverkusen-Logo.png" alt="Leverkusen" loading="lazy">
+                            </div>
+                            <span class="hora-proximo-jogo">09:00 CET</span>
+                        </div>
+                        <div class="cartao-proximo-jogo">
+                            <span class="data-proximo-jogo">Sáb 20/09</span>
+                            <div class="times-proximo-jogo">
+                                <img src="/Imagens/Brasão Bayer.png" alt="Bayern" loading="lazy">
+                                <img src="/Imagens/young-boys-logo.png" alt="Young Boys" loading="lazy">
+                            </div>
+                            <span class="hora-proximo-jogo">08:00 CET</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coluna-tabela">
+                    <h3>CLASSIFICAÇÃO</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Clube</th><th>PJ</th><th>V</th><th>E</th><th>D</th><th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 <img src="/Imagens/Bayer-Leverkusen-Logo.png" alt="Logo Leverkusen" class="logo-tabela" loading="lazy"> Leverkusen</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr class="linha-destaque-time">
+                                <td>2 <img src="/Imagens/Brasão Bayer.png" alt="Logo Bayern" class="logo-tabela" loading="lazy"> FC Bayern</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td>3 <img src="/Imagens/zeiss-jena-vector-logo.png" alt="Logo Jena" class="logo-tabela" loading="lazy"> Jena</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td>4 <img src="/Imagens/wolfsburg.png" alt="Logo Wolfsburg" class="logo-tabela" loading="lazy"> Wolfsburg</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td>5 <img src="/Imagens/frankfurt.logo.png" alt="Logo Frankfurt" class="logo-tabela" loading="lazy"> Frankfurt</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td>6 <img src="/Imagens/Hoffenheim.logo.png" alt="Logo Hoffenheim" class="logo-tabela" loading="lazy"> Hoffenheim</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                            <tr>
+                                <td>7 <img src="/Imagens/Freiburg-logo.png" alt="Logo Freiburg" class="logo-tabela" loading="lazy"> Freiburg</td><td>0</td><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="legenda-tabela">
+                        <p>LEGENDA</p>
+                        <span><i class="fas fa-circle verde"></i> Champions League</span>
+                        <span><i class="fas fa-circle azul"></i> Nova Classificação da Champions League</span>
+                        <span><i class="fas fa-circle vermelho"></i> Rebaixamento</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="elenco" class="secao-elenco">
+            <h2>NOSSO ELENCO</h2>
+            <div class="container-elenco">
+                <input type="radio" name="navegacao-jogadora" id="jogadora-1" class="radio-jogadora" checked>
+                <input type="radio" name="navegacao-jogadora" id="jogadora-2" class="radio-jogadora">
+                <input type="radio" name="navegacao-jogadora" id="jogadora-3" class="radio-jogadora">
+                <input type="radio" name="navegacao-jogadora" id="jogadora-4" class="radio-jogadora">
+                <input type="radio" name="navegacao-jogadora" id="jogadora-5" class="radio-jogadora">
+        
+                <div class="grade-elenco">
+                    <div class="cartao-jogadora">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768,dpr_2/v1756738777/cms/public/images/fcbayern-com/spielerinnen/portrait/Profilbilder/Profilbild_Grohs_Maria_Luisa.png" alt="Maria Luisa Grohs">
+                        <div class="info-jogadora">
+                            <span class="numero-jogadora">1</span>
+                            <h3 class="nome-jogadora">MARIA LUISA<br>GROHS</h3>
+                        </div>
+                    </div>
+
+                    <div class="cartao-jogadora">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768,dpr_2/v1725546308/cms/public/images/fcbayern-com/spielerinnen/portrait/Profilbilder/Profilbild_Gwinn_Giulia.png" alt="Giulia Gwinn">
+                        <div class="info-jogadora">
+                            <span class="numero-jogadora">7</span>
+                            <h3 class="nome-jogadora">GIULIA<br>GWINN</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-jogadora">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768,dpr_2/v1725545267/cms/public/images/fcbayern-com/spielerinnen/portrait/Profilbilder/Profilbild_Eriksson_Magda.png" alt="Magdalena Eriksson">
+                        <div class="info-jogadora">
+                            <span class="numero-jogadora">5</span>
+                            <h3 class="nome-jogadora">MAGDALENA<br>ERIKSSON</h3>
+                        </div>
+                    </div>
+
+                    <div class="cartao-jogadora">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768,dpr_2/v1724250418/cms/public/images/fcbayern-com/spielerinnen/portrait/Profilbilder/Profilbild_Oberdorf_Lena.png" alt="Lena Oberdorf">
+                        <div class="info-jogadora">
+                            <span class="numero-jogadora">8</span>
+                            <h3 class="nome-jogadora">LENA<br>OBERDORF</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-jogadora">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_1:1,c_fill,g_custom,w_768,dpr_2/v1601390801/cms/public/images/fcbayern-com/players/spielerportraits/ganzkoerper/berni_klein.png" alt="Berni">
+                        <div class="info-jogadora">
+                            <span class="numero-jogadora">10</span>
+                            <h3 class="nome-jogadora">BERNI<br>URSO</h3>
+                        </div>
+                    </div>
+
+                </div>
+        
+                <div class="navegacao-setas">
+                    <div class="par-setas" id="nav-para-1">
+                        <label for="jogadora-5" class="seta-navegacao seta-esquerda"><i class="fas fa-chevron-left"></i></label>
+                        <label for="jogadora-2" class="seta-navegacao seta-direita"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                    <div class="par-setas" id="nav-para-2">
+                        <label for="jogadora-1" class="seta-navegacao seta-esquerda"><i class="fas fa-chevron-left"></i></label>
+                        <label for="jogadora-3" class="seta-navegacao seta-direita"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                    <div class="par-setas" id="nav-para-3">
+                        <label for="jogadora-2" class="seta-navegacao seta-esquerda"><i class="fas fa-chevron-left"></i></label>
+                        <label for="jogadora-4" class="seta-navegacao seta-direita"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                    <div class="par-setas" id="nav-para-4">
+                        <label for="jogadora-3" class="seta-navegacao seta-esquerda"><i class="fas fa-chevron-left"></i></label>
+                        <label for="jogadora-5" class="seta-navegacao seta-direita"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                    <div class="par-setas" id="nav-para-5">
+                        <label for="jogadora-4" class="seta-navegacao seta-esquerda"><i class="fas fa-chevron-left"></i></label>
+                        <label for="jogadora-1" class="seta-navegacao seta-direita"><i class="fas fa-chevron-right"></i></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destaques" class="secao-destaques animar-ao-rolar">
+            <h2>DESTAQUES DA TEMPORADA</h2>
+            <div class="container-estatisticas">
+                <div class="cartao-estatistica">
+                    <img src="/Imagens/Lea Schüller.webp" alt="Lea Schüller" class="foto-destaque" loading="lazy">
+                    <h4>ARTILHEIRA</h4>
+                    <h3>LEA SCHÜLLER</h3>
+                    <div class="numero-estatistica">15 Gols</div>
+                    <p>Na Bundesliga Feminina</p>
+                </div>
+                <div class="cartao-estatistica">
+                    <img src="/Imagens/Giulia Gwinn.png" alt="Giulia Gwinn" class="foto-destaque" loading="lazy">
+                    <h4>LÍDER DE ASSISTÊNCIAS</h4>
+                    <h3>GIULIA GWINN</h3>
+                    <div class="numero-estatistica">11 Assistências</div>
+                    <p>Em todas as competições</p>
+                </div>
+                <div class="cartao-estatistica">
+                    <img src="/Imagens/Maria Grohs.jpg" alt="Maria Grohs" class="foto-destaque" loading="lazy">
+                    <h4>MURALHA</h4>
+                    <h3>MARIA GROHS</h3>
+                    <div class="numero-estatistica">12 Jogos sem sofrer gol</div>
+                    <p>Na Bundesliga Feminina</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mascotes" class="secao-mascotes">
+            <h2>Mascotes do Clube</h2>
+            <div class="grade-mascotes">
+        
+                <div class="cartao-mascote">
+                    <img src="/Imagens/Berni_perfil.png" alt="Mascote Berni" class="imagem-mascote">
+                    <h3>Berni</h3>
+                    <p>O carismático urso que é o mascote oficial do FC Bayern desde 2004, sempre animando a torcida.</p>
+                    <h4 class="titulo-galeria">Galeria</h4>
+                    <div class="galeria-mascote">
+                        <a href="#berni-foto1"><img src="/Imagens/Galeria - Berni_Home.png" alt="Foto 1 do Berni"></a>
+                        <a href="#berni-foto2"><img src="/Imagens/Galeria - Berni com crianças.png" alt="Foto 2 do Berni"></a>
+                        <a href="#berni-foto3"><img src="/Imagens/Galeria - Berni_Autografo.png" alt="Foto 3 do Berni"></a>
+                    </div>
+                </div>
+        
+                <div class="cartao-mascote">
+                    <img src="/Imagens/Mia_perfil.png" alt="Mascote Mia" class="imagem-mascote">
+                    <h3>Mia</h3>
+                    <p>A companheira de Berni, Mia representa a força e a paixão do time feminino do clube.</p>
+                    <h4 class="titulo-galeria">Galeria</h4>
+                    <div class="galeria-mascote">
+                        <a href="#mia-foto1"><img src="/Imagens/Galeria - Mia em campo.png" alt="Foto 1 da Mia"></a>
+                        <a href="#mia-foto2"><img src="/Imagens/Galeria - Mia_Autografo.png" alt="Foto 2 da Mia"></a>
+                        <a href="#mia-foto3"><img src="/Imagens/Galeria - Mia.png" alt="Foto 3 da Mia"></a>
+                    </div>
+                </div>
+        
+                <div class="cartao-mascote">
+                    <img src="/Imagens/Ben_perfil.png" alt="Mascote Ben" class="imagem-mascote">
+                    <h3>Ben</h3>
+                    <p>O mais novo membro da família de mascotes, Ben é o especialista em basquete do FC Bayern.</p>
+                    <h4 class="titulo-galeria">Galeria</h4>
+                    <div class="galeria-mascote">
+                        <a href="#ben-foto1"><img src="/Imagens/Galeria - Ben basquete.png" alt="Foto 1 do Ben"></a>
+                        <a href="#ben-foto2"><img src="/Imagens/Galeria - Ben quadra basquete.png" alt="Foto 2 do Ben"></a>
+                        <a href="#ben-foto3"><img src="/Imagens/Galeria - Ben_camisa99.png" alt="Foto 3 do Ben"></a>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+
+        <section id="noticias" class="secao-noticias animar-ao-rolar">
+            <h2>ÚLTIMAS NOTÍCIAS</h2>
+            <div class="grade-noticias">
+                <article class="cartao-noticia destaque">
+                    <a href="https://fcbayern.com/frauen/en/matches/frauen/bundesliga/2025-2026/rb-leipzig-fc-bayern-frauen-11-09-2025/report" target="_blank">
+                        <img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_16:9,c_fill,g_custom,w_1024,dpr_2/v1757856675/cms/public/images/fcbayern-com/homepage/Saison-25-26/FCB-Frauen/Spiele/250914_RBL-FCB/250914-rbl-fcb-01-fcb.jpg" alt="Notícia principal" loading="lazy">
+                        <div class="texto-cartao">
+                            <span class="categoria-noticia">DESTAQUE</span>
+                            <h3>Oberdorf marca dois gols e FCB Women derrota Leipzig.</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="cartao-noticia">
+                    <a href="https://fcbayern.com/en/news/2025/09/minister-president-soder-honours-fc-bayern-title-winning-teams" target="_blank"><img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_2:1,c_fill,g_custom,w_1536,dpr_2/v1757510701/cms/public/images/fcbayern-com/homepage/Saison-25-26/Sonstiges/250910-staatskanzlei-02-mel.jpg" alt="Notícia 2" loading="lazy"></a>
+                    <div class="texto-cartao">
+                            <span class="categoria-noticia">DESTAQUE</span>
+                            <h3>Ministro Markus Söder homenageia o FC Bayern</h3>
+                    </div>
+                </article>
+
+                <article class="cartao-noticia">
+                    <a href="https://fcbayern.com/frauen/en/news/2025/07/european-champion-stanways-eventful-six-months-at-fc-bayern--with-england" target="_blank"><img src="/Imagens/Noticia 1.png" alt="Notícia 3" loading="lazy"></a>
+                    <div class="texto-cartao">
+                            <span class="categoria-noticia">Saiba mais</span>
+                            <h3>Bicampeã europeia</h3>
+                    </div>
+                </article>
+
+                <article class="cartao-noticia">
+                    <a href="https://fcbayern.com/frauen/en/news/2025/arena-meldung-50-k/matchdays-5-to-10-scheduled" target="_blank"><img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_2:1,c_fill,g_custom,w_1536,dpr_2/v1757507702/cms/public/images/fcbayern-com/homepage/Saison-25-26/FCB-Frauen/Sonstiges/250910_Group_Dippold_16x9.jpg" alt="Notícia 4" loading="lazy"></a>
+                     <div class="texto-cartao">
+                            <span class="categoria-noticia">Saiba mais</span>
+                            <h3>Jornadas de 5 a 10 programadas</h3>
+                    </div>
+                </article>
+
+                <article class="cartao-noticia">
+                    <a href="https://fcbayern.com/frauen/en/news/2025/08/lena-oberdorf-interviewed"><img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_2:1,c_fill,g_custom,w_1536,dpr_2/v1757244741/cms/public/images/fcbayern-com/homepage/Saison-25-26/FCB-Frauen/Spiele/250906-FCB-B04/FCBayernFrauen-BayerLeverkusen-FBL_250906_AB_6000px_B1_0609.jpg" alt="Notícia 5" loading="lazy"></a>
+                     <div class="texto-cartao">
+                            <span class="categoria-noticia">Saiba mais</span>
+                            <h3>Recorde na Allianz Arena: Nos bastidores</h3>
+                    </div>
+                </article>
+
+                <article class="cartao-noticia">
+                    <a href="https://fcbayern.com/frauen/en/news/2025/arena-meldung-50-k/fc-bayern-women-set-new-attendance-record" target="_blank"><img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/ar_2:1,c_fill,g_custom,w_1536,dpr_2/v1757175445/cms/public/images/fcbayern-com/homepage/Saison-25-26/FCB-Frauen/Galerien/FCB-Frauen%20vs.%20Leverkusen/11-frauen-leverkusen-060925-beier.jpg" alt="Notícia 6" loading="lazy"></a>
+                     <div class="texto-cartao">
+                            <span class="categoria-noticia">Saiba mais</span>
+                            <h3>57.762 espectadores - FC Bayern Feminino</h3>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="loja" class="secao-loja animar-ao-rolar">
+            <h2>LOJA OFICIAL</h2>
+            <div class="grade-produtos">
+                <div class="cartao-produto">
+                    <a href="https://fcbayern.com/store/en-zz/c/adidas/jerseys-more/women-jerseys?kollektion=3940" target="_blank"><img src="/Imagens/camisa_1.png" alt="Camisa Principal 2025" loading="lazy"></a>
+                    <h3>Camisa Principal 2025</h3>
+                    <p>R$ 349,99</p>
+                </div>
+                <div class="cartao-produto">
+                    <a href="https://fcbayern.com/store/en-zz/c/adidas/jerseys-more" target="_blank"><img src="/Imagens/camisa_2.webp" alt="Camisa Alternativa 2025" loading="lazy"></a>
+                    <h3>Camisa Alternativa 2025</h3>
+                    <p>R$ 349,99</p>
+                </div>
+                <div class="cartao-produto">
+                    <a href="https://fcbayern.com/store/en-zz/c/adidas/jerseys-more" target="_blank"><img src="/Imagens/camisa_3.webp" alt="Camisa Goleiro 2025" loading="lazy"></a>
+                    <h3>Camisa Goleiro 2025</h3>
+                    <p>R$ 349,99</p>
+                </div>
+                <div class="cartao-produto">
+                    <a href="https://fcbayern.com/store/en-zz/c/adidas/jerseys-more" target="_blank"><img src="/Imagens/acessorio-bone.jpg" alt="Boné" loading="lazy"></a>
+                    <h3>Boné</h3>
+                    <p>R$ 149,99</p>
+                </div>
+                <div class="cartao-produto">
+                    <a href="https://fcbayern.com/store/en-zz/c/adidas/jerseys-more" target="_blank"><img src="/Imagens/acessorio-touca.jpg" alt="Touca" loading="lazy"></a>
+                    <h3>Touca</h3>
+                    <p>R$ 129,99</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="torcida" class="secao-torcida animar-ao-rolar">
+            <h2>NOSSA TORCIDA</h2>
+            <div class="grade-torcida">
+                <div class="cartao-torcida">
+                    <img src="/Imagens/MiaSanMia.jpg" alt="Torcida 1" loading="lazy">
+                    <h3>#MIASANMIA</h3>
+                </div>
+                <div class="cartao-torcida">
+                    <img src="/Imagens/Arena-Allianz.jpg" alt="Torcida 2" loading="lazy">
+                    <h3>ALLIANZ ARENA!</h3>
+                </div>
+                <div class="cartao-torcida">
+                    <img src="/Imagens/ORGULHO DE SER.png" alt="Torcida 3" loading="lazy">
+                    <h3>ORGULHO DE SER</h3>
+                </div>
+                <div class="cartao-torcida">
+                    <img src="/Imagens/Torcida com faixa Estadio.png" alt="Torcida 4" loading="lazy">
+                    <h3>SEMPRE PRESENTE</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="secao-historia animar-ao-rolar">
+            <h2>NOSSA HISTÓRIA DE CONQUISTAS</h2>
+            <p>O time feminino do Bayern foi fundado oficialmente em 1970, após jogar no amadorismo desde 1960. Venceu seu primeiro campeonato nacional em 1976 e, em 1990, foi um dos membros fundadores da Frauen-Bundesliga. Em 2012, a equipe conquistou a Copa da Alemanha. As mulheres do Bayern venceram a Bundesliga em 2015 e 2016. Em maio de 2023, o time feminino garantiu seu quinto título nacional, marcando o campeonato com uma vitória de 7-1, a maior da história do clube.</p>
+            <div class="container-trofeus">
+                <div class="trofeu-item">
+                    <a href="#modal-bundesliga" class="abrir-modal">
+                        <img src="/Imagens/bundesliga-logo-png.png" alt="Bundesliga" loading="lazy">
+                        <h4>Bundesliga</h4>
+                    </a>
+                    <div id="modal-bundesliga" class="modal-css">
+                        <div class="modal-content-css">
+                            <a href="#" class="modal-close-css">&times;</a>
+                            <img src="/Imagens/Troféu1 Bundesliga.jpg" alt="Bundesliga">
+                            <p>5 Títulos</p>
+                            <p>1976, 2015, 2016, 2021, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="trofeu-item">
+                    <a href="#modal-copa" class="abrir-modal">
+                        <img src="/Imagens/Copa da Alemanha-logo.png" alt="Copa da Alemanha" loading="lazy">
+                        <h4>Copa da Alemanha</h4>
+                    </a>
+                    <div id="modal-copa" class="modal-css">
+                        <div class="modal-content-css">
+                            <a href="#" class="modal-close-css">&times;</a>
+                            <img src="/Imagens/Copa Alemanha Feminina.webp" alt="Copa da Alemanha">
+                            <p>1 Título</p>
+                            <p>2012</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="trofeu-item">
+                    <a href="#modal-champions" class="abrir-modal">
+                        <img src="/Imagens/UEFA logo.png" alt="Champions League" loading="lazy">
+                        <h4>Champions League</h4>
+                    </a>
+                    <div id="modal-champions" class="modal-css">
+                        <div class="modal-content-css">
+                            <a href="#" class="modal-close-css">&times;</a>
+                            <img src="/Imagens/Champions League Feminina.png" alt="Champions League">
+                            <p>0 Títulos</p>
+                            <p>Ainda não conquistado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fique-por-dentro" class="secao-fique-por-dentro animar-ao-rolar">
+            <h2>FIQUE POR DENTRO</h2>
+            <p>Receba as últimas notícias, promoções e informações sobre ingressos diretamente no seu e-mail.</p>
+            <form class="formulario-newsletter">
+                <input type="email" placeholder="Digite seu melhor e-mail" required>
+                <button type="submit">Inscrever-se</button>
+            </form>
+        </section>
+
+        <section id="familia-bayern" class="secao-familia-bayern animar-ao-rolar">
+            <div class="conteudo-familia-bayern">
+                <h2>FAÇA PARTE DA FAMÍLIA FC BAYERN</h2>
+                <p>Quer fazer parte do clube? Inscreva-se para se tornar um membro agora!</p>
+                <a href="https://online.fcbayern.com/ev-mitglied-werden/home" target="_blank" class="botao">Torne-se um membro</a>
+            </div>
+            <div class="imagem-familia-bayern">
+                <img src="/Imagens/Bayern-Munich.Mais-Estadio.jpg" alt="Allianz Arena" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="rodape-principal">
+        <div class="logo-rodape">
+            <img src="/Imagens/berni3-semfundo.png" alt="Logo FC Bayern Rodapé" loading="lazy">
+        </div>
+        <nav class="links-rodape">
+            <a href="https://fcbayern.com/en/" target="_blank">fcbayern.com</a>
+            <a href="https://fcbayern.com/basketball/en" target="_blank">Basketball</a>
+            <a href="https://allianz-arena.com/en" target="_blank">Allianz Arena</a>
+            <a href="https://online.fcbayern.com/mediacenter/en#/mainNavigation" target="_blank">Media Center</a>
+        </nav>
+        <div class="redes-sociais-rodape">
+            <a href="https://www.instagram.com/fcbfrauen/?hl=de" target="_blank"><img src="/Imagens/Rede Sociais/instagram.png" alt="Instagram"/></a>
+            <a href="https://www.facebook.com/fcbfrauen/" target="_blank"><img src="/Imagens/Rede Sociais/face.png" alt="Facebook"/></a>
+            <a href="https://x.com/FCBfrauen" target="_blank"><img src="/Imagens/Rede Sociais/twitter.png" alt="Twitter"/></a>
+            <a href="https://www.youtube.com/channel/UCZkcxFIsqW5htimoUQKA0iA" target="_blank"><img src="/Imagens/Rede Sociais/youtube.png" alt="YouTube" /></a>
+        </div>
+        <img src="Imagens/berni5-semfundo.png" alt="mascote berni" class="mascote-easter-egg">
+    </footer>
+
+    <div id="berni-foto1" class="modal-css">
+        <div class="modal-content-css">
+            <a href="#berni-foto1" class="modal-close-css">&times;</a>
+            <img src="/Imagens/berni-foto1.jpg" alt="Foto 1 do Berni">
+        </div>
+    </div>
+    <div id="berni-foto2" class="modal-css">
+        <div class="modal-content-css">
+            <a href="#berni-foto2" class="modal-close-css">&times;</a>
+            <img src="/Imagens/berni-foto2.jpg" alt="Foto 2 do Berni">
+        </div>
+    </div>
+    <div id="berni-foto3" class="modal-css">
+        <div class="modal-content-css">
+            <a href="#berni-foto3" class="modal-close-css">&times;</a>
+            <img src="/Imagens/berni-foto3.jpg" alt="Foto 3 do Berni">
+        </div>
+    </div>
+
+</body>
+</html>
+

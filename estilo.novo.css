@@ -1,0 +1,1530 @@
+:root {
+    /* Tema Claro (Padrão) */
+    --cor-fundo: #F0F2F5;
+    --cor-fundo-card: #FFFFFF;
+    --cor-texto: #333333;
+    --cor-titulo-principal: #DF1C3F; /* Vermelho Bayern */
+    --cor-titulo-secundario: #0066B2; /* Azul Bayern */
+    --cor-borda: #E0E0E0;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    /* Cores de apoio (gerais) */
+    --cor-principal: #DC052D;
+    --cor-secundaria: #0066B2;
+    --cor-cinza-claro: #E0E0E0;
+    --cor-cinza-medio: #666666;
+    --cor-cinza-escuro: #333333;
+    --cor-branca: #FFFFFF;
+    --cor-preta: #000000;
+    
+    /* Fontes */
+    --fonte-titulos: 'Bebas Neue', sans-serif;
+    --fonte-texto: 'Inter', sans-serif;
+
+    /* Variáveis do Tema Escuro */
+    --cor-fundo-escuro: #1a1a1a;
+    --cor-fundo-card-escuro: #2a2a2a;
+    --cor-texto-claro: #e0e0e0;
+    --cor-titulo-principal-escuro: #FF4500;
+    --cor-titulo-secundario-escuro: #6495ED;
+    --cor-borda-escuro: #444444;
+    --sombra-card-escuro: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos Globais e Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #DF1C3F; /* Vermelho Bayern */
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h3, h4, h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #0066B2; /* Azul Bayern */
+}
+
+section {
+    padding: 60px 40px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    transition: background-color 0.3s ease;
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #DF1C3F; /* Vermelho Bayern */
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+    background-color: #0066B2; /* Azul Bayern */
+    transform: translateY(-2px);
+}
+
+/* Animação de Rolagem (Scroll )  */
+.animar-ao-rolar {
+    animation: aparecer-para-cima 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range-start: entry 10%;
+    animation-range-end: entry 40%;
+}
+
+@keyframes aparecer-para-cima {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Layout Principal e Menu Lateral */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(170deg, #DF1C3F 0%, #a4182f 100%);
+    z-index: 1001;
+    border-right: 3px solid #0066B2; /* Azul Bayern */
+    transition: width 0.4s ease;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.menu-lateral:hover {
+    width: 220px;
+}
+
+.conteudo-principal,
+.rodape-principal {
+    margin-left: 80px;
+    transition: margin-left 0.4s ease;
+}
+
+.menu-lateral:hover ~ .conteudo-principal,
+.menu-lateral:hover ~ .rodape-principal {
+    margin-left: 220px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.menu-lateral ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fa-lg {
+    min-width: 50px;
+    text-align: center;
+}
+
+.icone-menu {
+    font-style: normal;
+    font-size: 1.8rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.texto-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+.menu-lateral:hover .texto-menu {
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+/* LOGO INTERATIVO (FLIP) e EASTER EGG */
+.container-logo {
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    margin: 0 auto 20px auto;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.logo-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.container-logo:hover .logo-flipper {
+    transform: rotateY(180deg);
+}
+.logo-frente, .logo-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.emblema-menu-recolhido {
+    max-width: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.menu-lateral:hover .emblema-menu-recolhido {
+    opacity: 1;
+}
+
+.logo-verso {
+    background-color: #ffffff;
+    color: #DF1C3F; /* Vermelho Bayern */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+    transform: rotateY(180deg);
+    border: 4px solid #0066B2; /* Azul Bayern */
+}
+
+/* SEÇÃO 1: DESTAQUE (HERO) */
+.secao-destaque {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: #FFFFFF;
+    overflow: hidden;
+    padding: 0; /* Remove padding da section */
+}
+
+.container-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    
+    transform: scale(1.1);
+    animation: kenburnsAnimation 20s infinite, fadeAnimation 20s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+.slide:nth-child(4) { animation-delay: 15s; }
+.slide:nth-child(5) { animation-delay: 20s; }
+.slide:nth-child(6) { animation-delay: 25s; }
+
+@keyframes fadeAnimation {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes kenburnsAnimation {
+    10% { transform: scale(1.2) translateX(-2%); }
+    33% { transform: scale(1.2) translateX(2%); }
+}
+
+.secao-destaque::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 60%);
+    background-size: cover;
+    background-position: center;
+    z-index: 2; /* Z-index maior para sobrepor os slides */
+}
+.texto-destaque {
+    position: relative;
+    z-index: 3;
+    padding: 60px;
+    max-width: 700px;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+.texto-destaque h1, .texto-destaque h2 {
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.texto-destaque h1 { font-size: 4rem; }
+.texto-destaque h2 { font-size: 2rem; font-family: 'Inter', sans-serif; font-weight: 400; }
+.texto-destaque p { font-size: 1.1rem; margin-bottom: 20px; }
+
+.sobreposicao-topo {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 4;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.sobreposicao-topo .links-sociais a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    transition: color 0.3s;
+}
+.sobreposicao-topo .links-sociais a:hover { color: #DF1C3F; /* Vermelho Bayern */ }
+
+
+
+/* SEÇÃO 2: JOGOS E CLASSIFICAÇÃO  */
+.secao-jogos {
+    background-color: #0066B2; /* Azul Bayern */
+    padding: 40px;
+}
+
+.cabecalho-secao-jogos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.cabecalho-secao-jogos h2 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.competicoes {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 15px 20px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.competicoes h3 {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.competicoes ul {
+    list-style: none;
+}
+
+.competicoes ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+.competicoes .icone-competicao {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.container-jogos-e-tabela {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Coluna da Esquerda: Próximos Jogos */
+.coluna-jogos {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cartao-proximo-jogo {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    margin: 1rem;
+}
+
+.cartao-proximo-jogo:hover {
+    transform: scale(1.03);
+}
+
+.data-proximo-jogo {
+    font-weight: bold;
+    text-align: center;
+    flex-basis: 80px;
+}
+
+.times-proximo-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.times-proximo-jogo span {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.times-proximo-jogo img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.hora-proximo-jogo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+    flex-basis: 80px;
+    text-align: right;
+}
+
+/* Coluna da Direita: Tabela de Classificação */
+.coluna-tabela {
+    flex: 2;
+    min-width: 400px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.coluna-tabela h3 {
+    color: #DF1C3F; /* Vermelho Bayern */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: #000000; 
+}
+
+table th, table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--cor-cinza-claro);
+}
+
+table th {
+    font-weight: bold;
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.linha-destaque-time {
+    background-color: #0066B2;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.linha-destaque-time td {
+    color: #FFFFFF;
+}
+
+.logo-tabela {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.legenda-tabela {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--cor-cinza-claro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.legenda-tabela p {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333333;
+}
+
+.legenda-tabela span {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.legenda-tabela .fas {
+    margin-right: 5px;
+    font-size: 0.7rem;
+}
+
+.legenda-tabela .verde {
+    color: #28a745;
+}
+
+.legenda-tabela .azul {
+    color: #0066B2; /* Azul Bayern */
+}
+
+.legenda-tabela .vermelho {
+    color: #DF1C3F; /* Vermelho Bayern */
+}
+
+
+
+/* SEÇÃO 3: ELENCO (CARROSSEL) */
+.secao-elenco {
+    background-color: #DF1C3F; /* Vermelho Bayern */
+    padding: 60px 0;
+}
+
+.secao-elenco h2 {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.container-elenco {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.grade-elenco {
+    display: flex;
+    width: 500%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cartao-jogadora {
+    width: 20%;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 7px;
+    overflow: hidden;
+    aspect-ratio: 5 / 5;
+    background-color: #f0f0f0;
+    border: 7px solid transparent;
+    border-image-source: linear-gradient(135deg, rgba(0, 101, 179, 0.70) 0%, rgba(0, 98, 255, 0.70) 100%);
+    border-image-slice: 1;
+}
+
+.cartao-jogadora img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.info-jogadora {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 25px;
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.info-jogadora .numero-jogadora {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 7rem;
+    line-height: 1;
+}
+
+.info-jogadora .nome-jogadora {
+    color: #FFFFFF;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* LÓGICA DE NAVEGAÇÃO */
+.radio-jogadora {
+    display: none;
+}
+
+#jogadora-1:checked ~ .grade-elenco { transform: translateX(0%); }
+#jogadora-2:checked ~ .grade-elenco { transform: translateX(-20%); }
+#jogadora-3:checked ~ .grade-elenco { transform: translateX(-40%); }
+#jogadora-4:checked ~ .grade-elenco { transform: translateX(-60%); }
+#jogadora-5:checked ~ .grade-elenco { transform: translateX(-80%); }
+
+.par-setas {
+    display: none;
+}
+
+#jogadora-1:checked ~ .navegacao-setas #nav-para-1 { display: block; }
+#jogadora-2:checked ~ .navegacao-setas #nav-para-2 { display: block; }
+#jogadora-3:checked ~ .navegacao-setas #nav-para-3 { display: block; }
+#jogadora-4:checked ~ .navegacao-setas #nav-para-4 { display: block; }
+#jogadora-5:checked ~ .navegacao-setas #nav-para-5 { display: block; }
+
+.seta-navegacao {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.seta-navegacao:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.seta-esquerda { left: 20px; }
+.seta-direita { right: 20px; }
+
+
+/* SEÇÃO 4: DESTAQUES */
+.secao-destaques {
+    background-color: #0066B2; /* Azul Bayern */
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.secao-destaques h2 {
+    color: #FFFFFF;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.container-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.cartao-estatistica {
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao-estatistica:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-estatistica .foto-destaque {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid #DF1C3F; /* Vermelho Bayern */
+    margin-bottom: 15px;
+}
+
+.cartao-estatistica h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.cartao-estatistica h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #0066B2; /* Azul Bayern */
+    margin: 5px 0;
+}
+
+.numero-estatistica {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #DF1C3F; /* Vermelho Bayern */
+    margin: 10px 0;
+}
+
+.cartao-estatistica p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+/* SEÇÃO 5: MASCOTES DO CLUBE */
+.secao-mascotes {
+    background-color:#DF1C3F; /* Vermelho Bayern */
+}
+
+.secao-mascotes h2 {
+    color: #FFFFFF;
+}
+
+.grade-mascotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.cartao-mascote {
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem-mascote {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #0066B2; /* Azul Bayern */
+}
+
+.cartao-mascote h3 {
+    font-size: 1.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #DF1C3F; /* Vermelho Bayern */
+    margin-bottom: 10px;
+}
+
+.cartao-mascote p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.titulo-galeria {
+    color: #0066B2; /* Azul Bayern */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.galeria-mascote {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.galeria-mascote img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #E0E0E0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria-mascote img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* SEÇÃO 6: NOTÍCIAS */
+.secao-noticias h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.grade-noticias {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.cartao-noticia {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.cartao-noticia.destaque {
+    grid-row: span 2;
+    height: 620px;
+}
+
+.cartao-noticia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-cartao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 15%, transparent 90%);
+    color: #FFFFFF;
+    padding: 20px 15px 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.cartao-noticia:hover .texto-cartao {
+    background: linear-gradient(to top, rgba(0,0,0,1) 10%, transparent 100%);
+}
+
+.categoria-noticia {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #FFFFFF; 
+    margin-bottom: 2px;
+}
+
+.texto-cartao h3 {
+    color: #FFFFFF;
+    font-size: 1.0rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+
+
+/* SEÇÃO 7: LOJA OFICIAL */
+.secao-loja h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cartao-produto {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid transparent;
+    border-image-source: linear-gradient(90deg, var(--cor-titulo-principal) 0%, var(--cor-titulo-secundario) 100%);
+    border-image-slice: 1;
+}
+
+.cartao-produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-produto img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cartao-produto h3 {
+    font-size: 1.1rem;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.cartao-produto p {
+    font-weight: bold;
+    color: #DF1C3F; /* Vermelho Bayern */
+    font-size: 1.2rem;
+}
+
+/* SEÇÃO 8: NOSSA TORCIDA */
+.secao-torcida {
+    background-color: #0066B2; /* Azul Bayern */
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.secao-torcida h2 {
+    color: var(--cor-branca);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.grade-torcida {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cartao-torcida {
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 10px solid transparent;
+    border-image-slice: 1.5;
+}
+
+.cartao-torcida:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-torcida img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cartao-torcida h3 {
+    color: #333333;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* SEÇÃO 9: HISTÓRIA E CONQUISTAS */
+.secao-historia h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.secao-historia p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.container-trofeus {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.trofeu-item {
+    text-align: center;
+}
+
+.trofeu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.trofeu-item h4 {
+    color: #DF1C3F; /* Vermelho Bayern */
+    font-size: 1.1rem;
+}
+
+
+/* MODAL (POP-UP) */
+.modal-css {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-css:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content-css {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content-css img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.modal-content-css p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0066B2; /* Azul Bayern */
+}
+
+.modal-close-css {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #DF1C3F; /* Vermelho Bayern */
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.modal-close-css:hover {
+    transform: scale(1.1);
+}
+
+/* SEÇÃO 10: NEWSLETTER */
+.secao-fique-por-dentro {
+    background-color: #DF1C3F; /* Vermelho Bayern */
+    color: #FFFFFF;
+    padding: 40px;
+    text-align: center;
+}
+
+.secao-fique-por-dentro h2 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.secao-fique-por-dentro p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.formulario-newsletter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-newsletter input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.formulario-newsletter button {
+    padding: 12px 25px;
+    background-color: #0066B2; /* Azul Bayern */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-newsletter button:hover {
+    background-color: #004d80;
+}
+
+/* SEÇÃO 11: FAMÍLIA BAYERN */
+.secao-familia-bayern {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+}
+
+.conteudo-familia-bayern {
+    flex: 1;
+}
+
+.conteudo-familia-bayern h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.conteudo-familia-bayern p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.imagem-familia-bayern {
+    flex: 1;
+    text-align: center;
+}
+
+.imagem-familia-bayern img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+}
+
+/* RODAPÉ  */
+.rodape-principal {
+    padding: 40px 20px;
+    background-color: #222;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 80px; /* Adicionado para alinhar com o menu */
+    transition: margin-left 0.4s ease, background-color 0.3s ease;
+}
+
+.rodape-principal .logo-rodape img {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.links-rodape {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links-rodape a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.links-rodape a:hover {
+    color: #DF1C3F; /* Vermelho Bayern */
+}
+
+.redes-sociais-rodape {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais-rodape a {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais-rodape a:hover {
+    color: #DF1C3F; /* Vermelho Bayern */
+}
+
+.mascote-easter-egg {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 120px;
+    transition: transform 0.4s ease;
+}
+
+.rodape-principal:hover .mascote-easter-egg {
+    transform: translateY(-20px);
+}
+
+/* Tema Claro/Escuro */
+.checkbox-tema {
+    display: none;
+}
+
+.label-tema {
+    width: 60px;
+    height: 30px;
+    background-color: #111;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-tema .fas {
+    color: #f1c40f;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.label-tema .fa-moon {
+    color: #f39c12;
+}
+
+.bola {
+    width: 24px;
+    height: 24px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#alternar-tema:checked + nav + main .label-tema .bola {
+    transform: translateX(30px);
+}
+
+/* Aplicar o tema em todos os elementos */
+#alternar-tema:checked ~ body {
+    --cor-fundo: #1a1a1a;
+    --cor-fundo-card: #FFFFFF;
+    --cor-texto: #333333;
+    --cor-titulo-principal: #FF4500;
+    --cor-titulo-secundario: #6495ED;
+    --cor-borda: #E0E0E0;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#alternar-tema:checked ~ .menu-lateral {
+    background: linear-gradient(170deg, #333 0%, #1a1a1a 100%);
+}
+
+#alternar-tema:checked ~ body h1,
+#alternar-tema:checked ~ body h2 {
+    color: #FF4500;
+}
+
+#alternar-tema:checked ~ body h3,
+#alternar-tema:checked ~ body h4,
+#alternar-tema:checked ~ body h5 {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .cartao-proximo-jogo {
+    background-color: #2a2a2a;
+    color:#e0e0e0;
+}
+
+#alternar-tema:checked ~ body .data-proximo-jogo {
+    color: #FF4500;
+}
+
+#alternar-tema:checked ~ body .hora-proximo-jogo {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .coluna-tabela {
+    background-color: #2a2a2a;
+    color:#e0e0e0;
+}
+
+#alternar-tema:checked ~ body table th {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .linha-destaque-time {
+    background-color: #3a3a3a;
+}
+
+#alternar-tema:checked ~ body .linha-destaque-time td {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .legenda-tabela span {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica h4 {
+    color: #AAAAAA;
+}
+
+#alternar-tema:checked ~ body .cartao-estatistica p {
+    color: #AAAAAA;
+}
+
+#alternar-tema:checked ~ body .cartao-produto {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .cartao-produto h3 {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .cartao-torcida {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .cartao-torcida h3 {
+    color: #e0e0e0;
+}
+
+#alternar-tema:checked ~ body .modal-content-css {
+    background-color: #1e1e1e;
+}
+
+#alternar-tema:checked ~ body .modal-content-css p {
+    color: #6495ED;
+}
+
+#alternar-tema:checked ~ body .secao-familia-bayern {
+    background-color: #2a2a2a;
+}
+
+#alternar-tema:checked ~ body .rodape-principal {
+    background-color: #333;
+}
+
+/* RESPONSIVIDADE */
+/* AJUSTES PARA TABLETS E TELAS MÉDIAS */
+@media (max-width: 1080px) {
+    .container-informacoes-gerais {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grade-noticias {
+        grid-template-columns: 1fr;
+    }
+
+    .sobreposicao-topo {
+        position: fixed; /* Fixa os ícones na tela */
+        top: 20px;       /* Distância do topo */
+        right: 40px;     /* Distância da direita */
+        z-index: 1002;   /* Garante que fiquem acima de tudo */
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sobreposicao-topo .links-sociais { 
+        display: flex; 
+        gap: 15px; 
+    }
+    
+    /* ícones dentro do menu lateral fiquem escondidos no desktop */
+    .menu-lateral .sobreposicao-topo {
+        display: none;
+    }
+}
+
+/* AJUSTES PARA CELULARES E TELAS PEQUENAS */
+@media (max-width: 768px) {
+    /* AJUSTES GERAIS */
+    body {
+        font-size: 14px;
+    }
+
+    /* MENU E CONTEÚDO PRINCIPAL */
+    .conteudo-principal,
+    .rodape-principal {
+        margin-left: 0 !important; 
+    }
+    
+    .menu-lateral {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border-right: none;
+        border-bottom: 3px solid #6495ED;
+        padding: 0; 
+    }
+
+    .menu-lateral:hover {
+        width: 100%;
+    }
+
+    .menu-lateral .container-logo {
+        display: none;
+    }
+    
+    /* Ícones e links na mesma linha */
+    .sobreposicao-topo {
+        /*position: static;
+        width: 100%;*/
+        display: flex;
+        order: 1;
+        justify-content: space-between; /* Ícones sociais de um lado, tema do outro */
+        align-items: center;
+        background-color: #0066B2; 
+        padding: 8px 15px; /* Padding vertical e horizontal */
+        order: 1; 
+    }
+    .links-sociais img { width: 22px; } /* Ícones sociais um pouco menores */
+
+    .menu-lateral ul {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 15px;
+        order: 2; 
+        background-color: #DF1C3F; /* Fundo vermelho do menu */
+    }
+    .menu-lateral ul::-webkit-scrollbar { display: none; }
+    .menu-lateral ul li a { padding: 8px 12px; background-color: rgba(0,0,0,0.2); border-radius: 5px; }
+    .menu-lateral .texto-menu { opacity: 1; margin-left: 0; }
+    .menu-lateral .fa-lg { display: none; }
+    
+    /* Esconde a duplicata dos ícones que está no <main> */
+    main > .sobreposicao-topo {
+        display: none;
+    }
+    
+    .container-informacoes-gerais {
+        grid-template-columns: 1fr; 
+    }
+    .secao-plantel {
+        padding: 40px 15px; /* Diminui o padding lateral da seção */
+    }
+    .secao-plantel h2 { font-size: 1.8rem; }
+    
+    #tecnico .info-tecnico {
+        position: static; 
+        transform: none; 
+        width: 100%;
+        max-width: 100%; /* Card ocupa largura total */
+        margin: -60px auto 20px auto;
+    }
+    #tecnico .lista-jogadores { padding-top: 0; }
+    .banner-tecnico { height: 150px; }
+
+    /* FORMAÇÃO TÁTICA */
+    .campo-futebol {
+        height: auto; /* altura automática */
+        aspect-ratio: 1 / 1.5; /* Força uma proporção mais vertical */
+        max-width: 100%;
+        background-size: 100% 100%; /* Garante que o campo preencha o espaço */
+    }
+    .posicao {
+        width: 55px;
+        height: 55px;
+    }
+    .posicao .foto-jogador-campo {
+        width: 45px;
+        height: 45px;
+    }
+    .posicao .nome-jogador-campo,
+    .posicao .numero-jogador-campo {
+        font-size: 0.7rem; /* Diminui a fonte para caber */
+    }
+}
