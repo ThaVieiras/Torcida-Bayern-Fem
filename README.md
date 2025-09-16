@@ -1,6 +1,6 @@
 # FC Bayern Frauen - Fan Page Interativa
 
-![Capa do Projeto](https://raw.githubusercontent.com/ThaVieiras/Torcida-Bayern-Fem/main/Capa-1.png)
+![Capa do Projeto](https://github.com/ThaVieiras/Torcida-Bayern-Fem/blob/main/Capa-1.png)
 
 ---
 
